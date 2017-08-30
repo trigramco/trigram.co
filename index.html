@@ -8,11 +8,13 @@
 <style>
 body {
   background: #000;
+  transition: background 0.2s linear;
 }
 #trigrams {
   color: #f0f0f0;
   font-size: 15em;
   margin-top: -.4em;
+  transition: color 0.2s linear
 }
 #main {
   height: 100%;
@@ -30,9 +32,23 @@ body {
 </body>
 <script>
 
+var theme = 'black'
 var trigrams = ['☰', '☱', '☲', '☳', '☴', '☵', '☶', '☷'];
 
 $(function() {
+
+  $('#main').click(function(){
+    console.log('click')
+    if (theme === 'black') {
+      $('body').css('background', '#fff')
+      $('#trigrams').css('color', '#000')
+      theme = 'white'
+    } else {
+      $('body').css('background', '#000')
+      $('#trigrams').css('color', '#f0f0f0')
+      theme = 'black'
+    }
+  })
 
   var x = 0
 

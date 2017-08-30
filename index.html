@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>[ ☶ ]</title>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<style>
+body {
+  background: #000;
+}
+#trigrams {
+  color: #f0f0f0;
+  font-size: 15em;
+  margin-top: -.4em;
+}
+#main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+</head>
+<body>
+  <div id='main'>
+    <div id = 'trigrams'>☶</div>
+  </div>
+</body>
+<script>
+
+var trigrams = ['☰', '☱', '☲', '☳', '☴', '☵', '☶', '☷'];
+
+$(function() {
+
+  var x = 0
+
+  setInterval(function() {
+
+    if (x > 7) {
+      x = 0
+    }
+
+    $('#trigrams').fadeOut(function() {
+      $(this).text(trigrams[x]).fadeIn()
+    })
+    x++
+  }, 2000)
+
+  // var x = 0
+  // return setInterval(function() {
+  //   if (x > 7) {
+  //     x = 0
+  //   }
+  //   $('#trigrams').text(trigrams[x]).fadeIn()
+  //   return x++
+
+})
+
+</script>
+</html>
